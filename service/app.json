@@ -24,7 +24,7 @@
   },
   "hooks": {
     "postcreate": {
-      "commands": ["./postcreate.sh"]
+      "commands": ["echo Calling from app.json", "./postcreate.sh"]
     }
   }
 }

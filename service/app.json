@@ -1,0 +1,30 @@
+{
+  "name": "cloud-run-test",
+  "env": {
+    "BACKGROUND_COLOR": {
+      "description": "specify a css color",
+      "value": "#fefefe",
+      "required": false
+    },
+    "TITLE": {
+      "description": "title for your site"
+    },
+    "APP_SECRET": {
+      "generator": "secret"
+    },
+    "ORDERED_ENV": {
+      "description": "control the order env variables are prompted",
+      "order": 100
+    }
+  },
+  "options": {
+    "allow-unauthenticated": false,
+    "port": 8080,
+    "max-instances": 1
+  },
+  "hooks": {
+    "postcreate": {
+      "commands": ["./postcreate.sh"]
+    }
+  }
+}

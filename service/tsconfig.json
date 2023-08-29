@@ -1,0 +1,20 @@
+{
+  "compilerOptions": {
+    "target": "es2016",
+    "lib": ["ES2020"],
+
+    /* Modules */
+    "module": "commonjs",
+    "rootDir": "./",
+    "moduleResolution": "Node16",
+    "outDir": "./dist",
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true /* Ensure that casing is correct in imports. */,
+
+    /* Type Checking */
+    "strict": true /* Enable all strict type-checking options. */,
+
+    /* Completeness */
+    "skipLibCheck": true
+  }
+}

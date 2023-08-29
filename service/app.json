@@ -1,16 +1,13 @@
 {
-  "name": "cloud-run-test",
+  "name": "service-test",
   "options": {
     "allow-unauthenticated": false,
     "port": 8080,
     "max-instances": 1
   },
   "hooks": {
-    "postbuild": {
-      "commands": ["echo Calling postbuild.sh from app.json", "./postcreate.sh"]
-    },
     "postcreate": {
-      "commands": ["echo Calling postcreate from app.json", "./postcreate.sh"]
+      "commands": ["./postcreate.sh"]
     }
   }
 }

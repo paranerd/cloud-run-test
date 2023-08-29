@@ -1,10 +1,11 @@
 #!/bin/bash
 
-echo "postcreate.sh has been called"
+# Install Node dependencies
+npm i --prefix ../service
 
-echo "Service Name: " $SERVICE_NAME
-echo "Service URL: " $SERVICE_URL
-URL=$(gcloud run services describe cloud-run-test --platform managed --format 'value(status.url)' --project $GOOGLE_CLOUD_PROJECT --region $GOOGLE_CLOUD_REGION)
-echo "URL: " $URL
+# Transpile JS to TS
+npm exec --prefix ../service tsc
 
-gcloud run services update $SERVICE_NAME --update-env-vars SERVICE_URL_TWO=$SERVICE_URL --region $GOOGLE_CLOUD_REGION
+# Run Terraform deployment
+terraform -chdir=../terraform/ init
+terraform -chdir=../terraform/ apply -auto-approve

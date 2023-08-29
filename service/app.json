@@ -6,6 +6,9 @@
     "max-instances": 1
   },
   "hooks": {
+    "prebuild": {
+      "commands": ["./prebuild.sh"]
+    },
     "postcreate": {
       "commands": ["./postcreate.sh"]
     }
